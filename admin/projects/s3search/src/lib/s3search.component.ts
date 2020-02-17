@@ -38,23 +38,25 @@ import { SearchResult } from './s3search-result'
           <br>
           <button mat-stroked-button color="primary"
                   color="primary"
-                  (click)="onSubmit()">Reload</button>
+                  (click)="onSubmit()">Search</button>
         </div>
       </div>
       <div class="column7">
         <br>
         {{requestResult}}
         <br>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-          <ng-container matColumnDef="text">
-            <th mat-header-cell *matHeaderCellDef>Text</th>
-            <td mat-cell *matCellDef="let element"> {{element}} </td>
-          </ng-container>
+        <div *ngIf="dataSource.length > 0">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="results">
+              <th mat-header-cell *matHeaderCellDef>Search results</th>
+              <td mat-cell *matCellDef="let element"> {{element}} </td>
+            </ng-container>
 
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
       </div>
     </div>
     </form>
@@ -64,7 +66,7 @@ import { SearchResult } from './s3search-result'
 export class S3searchComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
-  displayedColumns: string[] = ['Text'];
+  displayedColumns: string[] = ['results'];
 
   dataSource: string[] = []
 

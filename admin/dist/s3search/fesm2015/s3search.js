@@ -7,6 +7,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { BrowserModule } from '@angular/platform-browser';
 
 let S3searchService = class S3searchService {
     constructor() {
@@ -23,7 +24,7 @@ let S3searchComponent = class S3searchComponent {
     constructor(formBuilder, http) {
         this.formBuilder = formBuilder;
         this.http = http;
-        this.displayedColumns = ['Text'];
+        this.displayedColumns = ['results'];
         this.dataSource = [];
         this.requestResultChange = new EventEmitter();
         this.requestResult = '';
@@ -109,23 +110,25 @@ S3searchComponent = __decorate([
           <br>
           <button mat-stroked-button color="primary"
                   color="primary"
-                  (click)="onSubmit()">Reload</button>
+                  (click)="onSubmit()">Search</button>
         </div>
       </div>
       <div class="column7">
         <br>
         {{requestResult}}
         <br>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-          <ng-container matColumnDef="text">
-            <th mat-header-cell *matHeaderCellDef>Text</th>
-            <td mat-cell *matCellDef="let element"> {{element}} </td>
-          </ng-container>
+        <div *ngIf="dataSource.length > 0">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="results">
+              <th mat-header-cell *matHeaderCellDef>Search results</th>
+              <td mat-cell *matCellDef="let element"> {{element}} </td>
+            </ng-container>
 
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
       </div>
     </div>
     </form>
@@ -147,7 +150,8 @@ S3searchModule = __decorate([
             MatInputModule,
             MatButtonModule,
             HttpClientModule,
-            MatTableModule
+            MatTableModule,
+            BrowserModule
         ],
         exports: [S3searchComponent]
     })

@@ -7,6 +7,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { BrowserModule } from '@angular/platform-browser';
 
 var S3searchService = /** @class */ (function () {
     function S3searchService() {
@@ -24,7 +25,7 @@ var S3searchComponent = /** @class */ (function () {
     function S3searchComponent(formBuilder, http) {
         this.formBuilder = formBuilder;
         this.http = http;
-        this.displayedColumns = ['Text'];
+        this.displayedColumns = ['results'];
         this.dataSource = [];
         this.requestResultChange = new EventEmitter();
         this.requestResult = '';
@@ -78,7 +79,7 @@ var S3searchComponent = /** @class */ (function () {
     S3searchComponent = __decorate([
         Component({
             selector: 'lib-s3search',
-            template: "\n    <form [formGroup]=\"s3searchForm\">\n    <div class=\"row\">\n      <div class=\"column2\">\n        <div class=\"example-container\">\n          <br>\n          <mat-form-field appearance=\"fill\">\n            <mat-label>Queried text</mat-label>\n            <input matInput formControlName=\"queryText\">\n          </mat-form-field>\n          <br>\n          <mat-form-field appearance=\"fill\">\n            <mat-label>Region</mat-label>\n            <mat-select formControlName=\"region\">\n              <mat-option value=\"EMEA\">EMEA</mat-option>\n              <mat-option value=\"APAC\">APAC</mat-option>\n              <mat-option value=\"NAM\">NAM</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <br>\n          <mat-form-field appearance=\"fill\">\n            <mat-label>POD</mat-label>\n            <input matInput formControlName=\"pod\">\n          </mat-form-field>\n          <br>\n          <mat-form-field appearance=\"fill\">\n            <mat-label>Date</mat-label>\n            <input matInput formControlName=\"date\">\n          </mat-form-field>\n          <br>\n          <button mat-stroked-button color=\"primary\"\n                  color=\"primary\"\n                  (click)=\"onSubmit()\">Reload</button>\n        </div>\n      </div>\n      <div class=\"column7\">\n        <br>\n        {{requestResult}}\n        <br>\n        <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n          <ng-container matColumnDef=\"text\">\n            <th mat-header-cell *matHeaderCellDef>Text</th>\n            <td mat-cell *matCellDef=\"let element\"> {{element}} </td>\n          </ng-container>\n\n\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n        </table>\n      </div>\n    </div>\n    </form>\n  ",
+            template: "\n    <form [formGroup]=\"s3searchForm\">\n    <div class=\"row\">\n      <div class=\"column2\">\n        <div class=\"example-container\">\n          <br>\n          <mat-form-field appearance=\"fill\">\n            <mat-label>Queried text</mat-label>\n            <input matInput formControlName=\"queryText\">\n          </mat-form-field>\n          <br>\n          <mat-form-field appearance=\"fill\">\n            <mat-label>Region</mat-label>\n            <mat-select formControlName=\"region\">\n              <mat-option value=\"EMEA\">EMEA</mat-option>\n              <mat-option value=\"APAC\">APAC</mat-option>\n              <mat-option value=\"NAM\">NAM</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <br>\n          <mat-form-field appearance=\"fill\">\n            <mat-label>POD</mat-label>\n            <input matInput formControlName=\"pod\">\n          </mat-form-field>\n          <br>\n          <mat-form-field appearance=\"fill\">\n            <mat-label>Date</mat-label>\n            <input matInput formControlName=\"date\">\n          </mat-form-field>\n          <br>\n          <button mat-stroked-button color=\"primary\"\n                  color=\"primary\"\n                  (click)=\"onSubmit()\">Search</button>\n        </div>\n      </div>\n      <div class=\"column7\">\n        <br>\n        {{requestResult}}\n        <br>\n        <div *ngIf=\"dataSource.length > 0\">\n          <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n            <ng-container matColumnDef=\"results\">\n              <th mat-header-cell *matHeaderCellDef>Search results</th>\n              <td mat-cell *matCellDef=\"let element\"> {{element}} </td>\n            </ng-container>\n\n\n            <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n          </table>\n        </div>\n      </div>\n    </div>\n    </form>\n  ",
             styles: [".column2{float:left;width:20%}.column7{float:left;width:70%}.row:after{content:\"\";display:table;clear:both}table{width:100%}"]
         })
     ], S3searchComponent);
@@ -99,7 +100,8 @@ var S3searchModule = /** @class */ (function () {
                 MatInputModule,
                 MatButtonModule,
                 HttpClientModule,
-                MatTableModule
+                MatTableModule,
+                BrowserModule
             ],
             exports: [S3searchComponent]
         })

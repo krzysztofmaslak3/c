@@ -7,6 +7,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { BrowserModule } from '@angular/platform-browser';
 
 import * as ɵngcc0 from '@angular/core';
 import * as ɵngcc1 from '@angular/forms';
@@ -16,27 +17,48 @@ import * as ɵngcc4 from '@angular/material/input';
 import * as ɵngcc5 from '@angular/material/select';
 import * as ɵngcc6 from '@angular/material/core';
 import * as ɵngcc7 from '@angular/material/button';
-import * as ɵngcc8 from '@angular/material/table';
+import * as ɵngcc8 from '@angular/common';
+import * as ɵngcc9 from '@angular/material/table';
 
-function S3searchComponent_th_39_Template(rf, ctx) { if (rf & 1) {
-    ɵngcc0.ɵɵelementStart(0, "th", 20);
-    ɵngcc0.ɵɵtext(1, "Text");
+function S3searchComponent_div_37_th_3_Template(rf, ctx) { if (rf & 1) {
+    ɵngcc0.ɵɵelementStart(0, "th", 21);
+    ɵngcc0.ɵɵtext(1, "Search results");
     ɵngcc0.ɵɵelementEnd();
 } }
-function S3searchComponent_td_40_Template(rf, ctx) { if (rf & 1) {
-    ɵngcc0.ɵɵelementStart(0, "td", 21);
+function S3searchComponent_div_37_td_4_Template(rf, ctx) { if (rf & 1) {
+    ɵngcc0.ɵɵelementStart(0, "td", 22);
     ɵngcc0.ɵɵtext(1);
     ɵngcc0.ɵɵelementEnd();
 } if (rf & 2) {
-    const element_r27 = ctx.$implicit;
+    const element_r5 = ctx.$implicit;
     ɵngcc0.ɵɵadvance(1);
-    ɵngcc0.ɵɵtextInterpolate1(" ", element_r27, " ");
+    ɵngcc0.ɵɵtextInterpolate1(" ", element_r5, " ");
 } }
-function S3searchComponent_tr_41_Template(rf, ctx) { if (rf & 1) {
-    ɵngcc0.ɵɵelement(0, "tr", 22);
-} }
-function S3searchComponent_tr_42_Template(rf, ctx) { if (rf & 1) {
+function S3searchComponent_div_37_tr_5_Template(rf, ctx) { if (rf & 1) {
     ɵngcc0.ɵɵelement(0, "tr", 23);
+} }
+function S3searchComponent_div_37_tr_6_Template(rf, ctx) { if (rf & 1) {
+    ɵngcc0.ɵɵelement(0, "tr", 24);
+} }
+function S3searchComponent_div_37_Template(rf, ctx) { if (rf & 1) {
+    ɵngcc0.ɵɵelementStart(0, "div");
+    ɵngcc0.ɵɵelementStart(1, "table", 15);
+    ɵngcc0.ɵɵelementContainerStart(2, 16);
+    ɵngcc0.ɵɵtemplate(3, S3searchComponent_div_37_th_3_Template, 2, 0, "th", 17);
+    ɵngcc0.ɵɵtemplate(4, S3searchComponent_div_37_td_4_Template, 2, 1, "td", 18);
+    ɵngcc0.ɵɵelementContainerEnd();
+    ɵngcc0.ɵɵtemplate(5, S3searchComponent_div_37_tr_5_Template, 1, 0, "tr", 19);
+    ɵngcc0.ɵɵtemplate(6, S3searchComponent_div_37_tr_6_Template, 1, 0, "tr", 20);
+    ɵngcc0.ɵɵelementEnd();
+    ɵngcc0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r0 = ɵngcc0.ɵɵnextContext();
+    ɵngcc0.ɵɵadvance(1);
+    ɵngcc0.ɵɵproperty("dataSource", ctx_r0.dataSource);
+    ɵngcc0.ɵɵadvance(4);
+    ɵngcc0.ɵɵproperty("matHeaderRowDef", ctx_r0.displayedColumns);
+    ɵngcc0.ɵɵadvance(1);
+    ɵngcc0.ɵɵproperty("matRowDefColumns", ctx_r0.displayedColumns);
 } }
 let S3searchService = class S3searchService {
     constructor() {
@@ -49,7 +71,7 @@ let S3searchComponent = class S3searchComponent {
     constructor(formBuilder, http) {
         this.formBuilder = formBuilder;
         this.http = http;
-        this.displayedColumns = ['Text'];
+        this.displayedColumns = ['results'];
         this.dataSource = [];
         this.requestResultChange = new EventEmitter();
         this.requestResult = '';
@@ -94,7 +116,7 @@ let S3searchComponent = class S3searchComponent {
     }
 };
 S3searchComponent.ɵfac = function S3searchComponent_Factory(t) { return new (t || S3searchComponent)(ɵngcc0.ɵɵdirectiveInject(ɵngcc1.FormBuilder), ɵngcc0.ɵɵdirectiveInject(ɵngcc2.HttpClient)); };
-S3searchComponent.ɵcmp = ɵngcc0.ɵɵdefineComponent({ type: S3searchComponent, selectors: [["lib-s3search"]], outputs: { requestResultChange: "requestResultChange" }, decls: 43, vars: 5, consts: [[3, "formGroup"], [1, "row"], [1, "column2"], [1, "example-container"], ["appearance", "fill"], ["matInput", "", "formControlName", "queryText"], ["formControlName", "region"], ["value", "EMEA"], ["value", "APAC"], ["value", "NAM"], ["matInput", "", "formControlName", "pod"], ["matInput", "", "formControlName", "date"], ["mat-stroked-button", "", "color", "primary", "color", "primary", 3, "click"], [1, "column7"], ["mat-table", "", 1, "mat-elevation-z8", 3, "dataSource"], ["matColumnDef", "text"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-header-row", ""], ["mat-row", ""]], template: function S3searchComponent_Template(rf, ctx) { if (rf & 1) {
+S3searchComponent.ɵcmp = ɵngcc0.ɵɵdefineComponent({ type: S3searchComponent, selectors: [["lib-s3search"]], outputs: { requestResultChange: "requestResultChange" }, decls: 38, vars: 3, consts: [[3, "formGroup"], [1, "row"], [1, "column2"], [1, "example-container"], ["appearance", "fill"], ["matInput", "", "formControlName", "queryText"], ["formControlName", "region"], ["value", "EMEA"], ["value", "APAC"], ["value", "NAM"], ["matInput", "", "formControlName", "pod"], ["matInput", "", "formControlName", "date"], ["mat-stroked-button", "", "color", "primary", "color", "primary", 3, "click"], [1, "column7"], [4, "ngIf"], ["mat-table", "", 1, "mat-elevation-z8", 3, "dataSource"], ["matColumnDef", "results"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-header-row", ""], ["mat-row", ""]], template: function S3searchComponent_Template(rf, ctx) { if (rf & 1) {
         ɵngcc0.ɵɵelementStart(0, "form", 0);
         ɵngcc0.ɵɵelementStart(1, "div", 1);
         ɵngcc0.ɵɵelementStart(2, "div", 2);
@@ -140,7 +162,7 @@ S3searchComponent.ɵcmp = ɵngcc0.ɵɵdefineComponent({ type: S3searchComponent,
         ɵngcc0.ɵɵelement(30, "br");
         ɵngcc0.ɵɵelementStart(31, "button", 12);
         ɵngcc0.ɵɵlistener("click", function S3searchComponent_Template_button_click_31_listener($event) { return ctx.onSubmit(); });
-        ɵngcc0.ɵɵtext(32, "Reload");
+        ɵngcc0.ɵɵtext(32, "Search");
         ɵngcc0.ɵɵelementEnd();
         ɵngcc0.ɵɵelementEnd();
         ɵngcc0.ɵɵelementEnd();
@@ -148,14 +170,7 @@ S3searchComponent.ɵcmp = ɵngcc0.ɵɵdefineComponent({ type: S3searchComponent,
         ɵngcc0.ɵɵelement(34, "br");
         ɵngcc0.ɵɵtext(35);
         ɵngcc0.ɵɵelement(36, "br");
-        ɵngcc0.ɵɵelementStart(37, "table", 14);
-        ɵngcc0.ɵɵelementContainerStart(38, 15);
-        ɵngcc0.ɵɵtemplate(39, S3searchComponent_th_39_Template, 2, 0, "th", 16);
-        ɵngcc0.ɵɵtemplate(40, S3searchComponent_td_40_Template, 2, 1, "td", 17);
-        ɵngcc0.ɵɵelementContainerEnd();
-        ɵngcc0.ɵɵtemplate(41, S3searchComponent_tr_41_Template, 1, 0, "tr", 18);
-        ɵngcc0.ɵɵtemplate(42, S3searchComponent_tr_42_Template, 1, 0, "tr", 19);
-        ɵngcc0.ɵɵelementEnd();
+        ɵngcc0.ɵɵtemplate(37, S3searchComponent_div_37_Template, 7, 3, "div", 14);
         ɵngcc0.ɵɵelementEnd();
         ɵngcc0.ɵɵelementEnd();
         ɵngcc0.ɵɵelementEnd();
@@ -164,12 +179,8 @@ S3searchComponent.ɵcmp = ɵngcc0.ɵɵdefineComponent({ type: S3searchComponent,
         ɵngcc0.ɵɵadvance(35);
         ɵngcc0.ɵɵtextInterpolate1(" ", ctx.requestResult, " ");
         ɵngcc0.ɵɵadvance(2);
-        ɵngcc0.ɵɵproperty("dataSource", ctx.dataSource);
-        ɵngcc0.ɵɵadvance(4);
-        ɵngcc0.ɵɵproperty("matHeaderRowDef", ctx.displayedColumns);
-        ɵngcc0.ɵɵadvance(1);
-        ɵngcc0.ɵɵproperty("matRowDefColumns", ctx.displayedColumns);
-    } }, directives: [ɵngcc1.ɵangular_packages_forms_forms_y, ɵngcc1.NgControlStatusGroup, ɵngcc1.FormGroupDirective, ɵngcc3.MatFormField, ɵngcc3.MatLabel, ɵngcc4.MatInput, ɵngcc1.DefaultValueAccessor, ɵngcc1.NgControlStatus, ɵngcc1.FormControlName, ɵngcc5.MatSelect, ɵngcc6.MatOption, ɵngcc7.MatButton, ɵngcc8.MatTable, ɵngcc8.MatColumnDef, ɵngcc8.MatHeaderCellDef, ɵngcc8.MatCellDef, ɵngcc8.MatHeaderRowDef, ɵngcc8.MatRowDef, ɵngcc8.MatHeaderCell, ɵngcc8.MatCell, ɵngcc8.MatHeaderRow, ɵngcc8.MatRow], styles: [".column2[_ngcontent-%COMP%]{float:left;width:20%}.column7[_ngcontent-%COMP%]{float:left;width:70%}.row[_ngcontent-%COMP%]:after{content:\"\";display:table;clear:both}table[_ngcontent-%COMP%]{width:100%}"] });
+        ɵngcc0.ɵɵproperty("ngIf", ctx.dataSource.length > 0);
+    } }, directives: [ɵngcc1.ɵangular_packages_forms_forms_y, ɵngcc1.NgControlStatusGroup, ɵngcc1.FormGroupDirective, ɵngcc3.MatFormField, ɵngcc3.MatLabel, ɵngcc4.MatInput, ɵngcc1.DefaultValueAccessor, ɵngcc1.NgControlStatus, ɵngcc1.FormControlName, ɵngcc5.MatSelect, ɵngcc6.MatOption, ɵngcc7.MatButton, ɵngcc8.NgIf, ɵngcc9.MatTable, ɵngcc9.MatColumnDef, ɵngcc9.MatHeaderCellDef, ɵngcc9.MatCellDef, ɵngcc9.MatHeaderRowDef, ɵngcc9.MatRowDef, ɵngcc9.MatHeaderCell, ɵngcc9.MatCell, ɵngcc9.MatHeaderRow, ɵngcc9.MatRow], styles: [".column2[_ngcontent-%COMP%]{float:left;width:20%}.column7[_ngcontent-%COMP%]{float:left;width:70%}.row[_ngcontent-%COMP%]:after{content:\"\";display:table;clear:both}table[_ngcontent-%COMP%]{width:100%}"] });
 S3searchComponent.ctorParameters = () => [
     { type: FormBuilder },
     { type: HttpClient }
@@ -189,7 +200,8 @@ S3searchModule.ɵinj = ɵngcc0.ɵɵdefineInjector({ factory: function S3searchMo
             MatInputModule,
             MatButtonModule,
             HttpClientModule,
-            MatTableModule
+            MatTableModule,
+            BrowserModule
         ]] });
 /*@__PURE__*/ (function () { ɵngcc0.ɵsetClassMetadata(S3searchService, [{
         type: Injectable,
@@ -233,23 +245,25 @@ S3searchModule.ɵinj = ɵngcc0.ɵɵdefineInjector({ factory: function S3searchMo
           <br>
           <button mat-stroked-button color="primary"
                   color="primary"
-                  (click)="onSubmit()">Reload</button>
+                  (click)="onSubmit()">Search</button>
         </div>
       </div>
       <div class="column7">
         <br>
         {{requestResult}}
         <br>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-          <ng-container matColumnDef="text">
-            <th mat-header-cell *matHeaderCellDef>Text</th>
-            <td mat-cell *matCellDef="let element"> {{element}} </td>
-          </ng-container>
+        <div *ngIf="dataSource.length > 0">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="results">
+              <th mat-header-cell *matHeaderCellDef>Search results</th>
+              <td mat-cell *matCellDef="let element"> {{element}} </td>
+            </ng-container>
 
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
       </div>
     </div>
     </form>
@@ -266,7 +280,8 @@ S3searchModule.ɵinj = ɵngcc0.ɵɵdefineInjector({ factory: function S3searchMo
         MatInputModule,
         MatButtonModule,
         HttpClientModule,
-        MatTableModule]; }, exports: function () { return [S3searchComponent]; } }); })();
+        MatTableModule,
+        BrowserModule]; }, exports: function () { return [S3searchComponent]; } }); })();
 /*@__PURE__*/ (function () { ɵngcc0.ɵsetClassMetadata(S3searchModule, [{
         type: NgModule,
         args: [{
@@ -279,7 +294,8 @@ S3searchModule.ɵinj = ɵngcc0.ɵɵdefineInjector({ factory: function S3searchMo
                     MatInputModule,
                     MatButtonModule,
                     HttpClientModule,
-                    MatTableModule
+                    MatTableModule,
+                    BrowserModule
                 ],
                 exports: [S3searchComponent]
             }]
