@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
-import { SearchResult } from './s3search-result.ts'
+import { SearchResult } from './s3search-result'
 
 @Component({
   selector: 'lib-s3search',
@@ -45,7 +45,7 @@ import { SearchResult } from './s3search-result.ts'
         <br>
         {{requestResult}}
         <br>
-        <table mat-table [dataSource]="searchResults" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
           <ng-container matColumnDef="text">
             <th mat-header-cell *matHeaderCellDef>Text</th>
             <td mat-cell *matCellDef="let element"> {{element}} </td>
@@ -66,7 +66,7 @@ export class S3searchComponent implements OnInit {
 
   displayedColumns: string[] = ['Text'];
 
-  searchResults: string[] = []
+  dataSource: string[] = []
 
   @Output() requestResultChange = new EventEmitter();
   requestResult = '';
@@ -94,6 +94,7 @@ export class S3searchComponent implements OnInit {
         .subscribe((searchResult: SearchResult)=>{
           console.log('Received response');
           self.requestResult = 'Search completed';
+          self.dataSource = searchResult.lines;
           self.requestResultChange.emit(self.requestResult);
         }, (error: HttpErrorResponse) => {
            let error_message = ''
