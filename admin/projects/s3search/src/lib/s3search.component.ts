@@ -90,7 +90,7 @@ export class S3searchComponent implements OnInit {
   onSubmit() {
     let self = this;
     if(this.s3searchForm.valid){
-        this.http.post<SearchResult>('/api/userCreate', this.s3searchForm.value)
+        this.http.post<SearchResult>('/s3', this.s3searchForm.value)
         .subscribe((searchResult: SearchResult)=>{
           console.log('Received response');
           self.requestResult = 'Search completed';

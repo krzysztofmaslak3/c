@@ -59,7 +59,7 @@ export class ReloadtoolComponent implements OnInit {
   onSubmit() {
     let self = this;
     if(this.reloadForm.valid){
-        this.http.post('/api/userCreate', this.reloadForm.value)
+        this.http.post('/sod', this.reloadForm.value)
         .subscribe((response: HttpResponse<string>)=>{
           console.log('Received response');
           self.requestResult = 'Reload initiated';
