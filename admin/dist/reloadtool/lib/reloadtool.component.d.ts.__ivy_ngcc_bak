@@ -1,0 +1,13 @@
+import { OnInit, EventEmitter } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+export declare class ReloadtoolComponent implements OnInit {
+    private formBuilder;
+    private http;
+    constructor(formBuilder: FormBuilder, http: HttpClient);
+    requestResultChange: EventEmitter<any>;
+    requestResult: string;
+    reloadForm: import("@angular/forms").FormGroup;
+    ngOnInit(): void;
+    onSubmit(): void;
+}

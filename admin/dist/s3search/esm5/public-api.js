@@ -1,0 +1,7 @@
+/*
+ * Public API Surface of s3search
+ */
+export * from './lib/s3search.service';
+export * from './lib/s3search.component';
+export * from './lib/s3search.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3Mzc2VhcmNoLyIsInNvdXJjZXMiOlsicHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUVILGNBQWMsd0JBQXdCLENBQUM7QUFDdkMsY0FBYywwQkFBMEIsQ0FBQztBQUN6QyxjQUFjLHVCQUF1QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiBzM3NlYXJjaFxuICovXG5cbmV4cG9ydCAqIGZyb20gJy4vbGliL3Mzc2VhcmNoLnNlcnZpY2UnO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvczNzZWFyY2guY29tcG9uZW50JztcbmV4cG9ydCAqIGZyb20gJy4vbGliL3Mzc2VhcmNoLm1vZHVsZSc7XG4iXX0=
